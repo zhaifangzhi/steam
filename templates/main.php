@@ -74,7 +74,7 @@ html body {
 		<script type="text/javascript">
 			document.getElementsByName("url")[0].focus();
 		</script><br>
-		eg: www.youtube.com or www.facebook.com.......
+		eg: www.youtube.com or www.twitter.com.......
 	<!-- [END] -->
 	
 	</div>
