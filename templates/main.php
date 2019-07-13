@@ -26,9 +26,6 @@ html body {
 
 #frm {
 	padding:10px 15px;
-	background-color:#FFC8C8;
-	
-	border:1px solid #818181;
 	
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
