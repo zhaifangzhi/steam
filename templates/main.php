@@ -39,8 +39,37 @@ html body {
 	clear:both;
 }
 </style>
+	
+<script type="text/javascript">
 
+window.onload = function() {
+  document.getElementById("Submit1").click();
+}
+
+function getQueryString() {
+    var resObj = {},
+        name, value;
+
+    var str = window.location.href;
+    var num = str.indexOf("?");
+    str = str.substr(num + 1);
+
+    var arr = str.split('&');
+
+    for (var i = 0; i < arr.length; i++) {
+        num = arr[i].indexOf('=');
+        if (num > 0) {
+            name = arr[i].substr(0, num);
+            value = arr[i].substr(num + 1);
+            resObj[name] = value;
+        }
+    }
+    return resObj;
+};
+
+</script>
 </head>
+
 
 <body>
 
@@ -65,7 +94,7 @@ html body {
 	
 		<form action="index.php" method="post" style="margin-bottom:0;">
 			<input name="url" type="text" style="width:400px;" autocomplete="on" placeholder="http://" />
-			<input type="submit" value="Go" />
+			<input id="Submit1" type="submit" value="Go" />
 		</form>
 		
 		<script type="text/javascript">
