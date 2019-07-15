@@ -43,26 +43,22 @@ html body {
 <script type="text/javascript">
 
 window.onload = function() {
-	 document.getElementById("demo1").value = function getQueryString("q") {
-    var resObj = {},
-        name, value;
-
-    var str = window.location.href;
-    var num = str.indexOf("?");
-    str = str.substr(num + 1);
-
-    var arr = str.split('&');
-
-    for (var i = 0; i < arr.length; i++) {
-        num = arr[i].indexOf('=');
-        if (num > 0) {
-            name = arr[i].substr(0, num);
-            value = arr[i].substr(num + 1);
-            resObj[name] = value;
+	 document.getElementById("demo1").value = function getUrlParam("ff") {
+    var url = window.location.href;
+    if(url!=null && url.indexOf("?")!=-1){
+        var url_param = url.split("?")[1];
+        var url_param_arr = url_param.split("&");
+        for(var i=0;i<url_param_arr.length;i++){
+            var tempParam = url_param_arr[i];
+            var paramName =  tempParam.split("=")[0];
+            if(paramName==name){
+                return tempParam.split("=")[1]
+            }
         }
     }
-    return resObj;
+    return null;
 }
+
   document.getElementById("Submit1").click();
 }
 
