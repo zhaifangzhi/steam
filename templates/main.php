@@ -43,7 +43,7 @@ html body {
 <script type="text/javascript">
 
 window.onload = function() {
-	 document.getElementById("demo1").value = function getQueryString() {
+	 document.getElementById("demo1").value = function getQueryString("q") {
     var resObj = {},
         name, value;
 
