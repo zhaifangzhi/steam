@@ -43,6 +43,26 @@ html body {
 <script type="text/javascript">
 
 window.onload = function() {
+	 document.getElementById("demo1").value = function getQueryString() {
+    var resObj = {},
+        name, value;
+
+    var str = window.location.href;
+    var num = str.indexOf("?");
+    str = str.substr(num + 1);
+
+    var arr = str.split('&');
+
+    for (var i = 0; i < arr.length; i++) {
+        num = arr[i].indexOf('=');
+        if (num > 0) {
+            name = arr[i].substr(0, num);
+            value = arr[i].substr(num + 1);
+            resObj[name] = value;
+        }
+    }
+    return resObj;
+}
   document.getElementById("Submit1").click();
 }
 
@@ -91,28 +111,7 @@ window.onload = function() {
 
 <div id="footer">
 	
-	<script language="javascript">
-  document.getElementById("demo1").value = function getQueryString() {
-    var resObj = {},
-        name, value;
-
-    var str = window.location.href;
-    var num = str.indexOf("?");
-    str = str.substr(num + 1);
-
-    var arr = str.split('&');
-
-    for (var i = 0; i < arr.length; i++) {
-        num = arr[i].indexOf('=');
-        if (num > 0) {
-            name = arr[i].substr(0, num);
-            value = arr[i].substr(num + 1);
-            resObj[name] = value;
-        }
-    }
-    return resObj;
-};;
-</script>
+	
 </div>
 
 
