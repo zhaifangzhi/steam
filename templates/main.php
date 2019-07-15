@@ -46,26 +46,7 @@ window.onload = function() {
   document.getElementById("Submit1").click();
 }
 
-function getQueryString() {
-    var resObj = {},
-        name, value;
 
-    var str = window.location.href;
-    var num = str.indexOf("?");
-    str = str.substr(num + 1);
-
-    var arr = str.split('&');
-
-    for (var i = 0; i < arr.length; i++) {
-        num = arr[i].indexOf('=');
-        if (num > 0) {
-            name = arr[i].substr(0, num);
-            value = arr[i].substr(num + 1);
-            resObj[name] = value;
-        }
-    }
-    return resObj;
-};
 
 </script>
 </head>
@@ -93,7 +74,7 @@ function getQueryString() {
 	<!-- I wouldn't touch this part -->
 	
 		<form action="index.php" method="post" style="margin-bottom:0;">
-			<input name="url" type="text" style="width:400px;" value="JavaScript:getQueryString()" />
+			<input id="demo1" name="url" type="text" style="width:400px;" />
 			<input id="Submit1" type="submit" value="Go" />
 		</form>
 		
@@ -109,6 +90,29 @@ function getQueryString() {
 </div>
 
 <div id="footer">
+	
+	<script language="javascript">
+  document.getElementById("demo1").value = function getQueryString() {
+    var resObj = {},
+        name, value;
+
+    var str = window.location.href;
+    var num = str.indexOf("?");
+    str = str.substr(num + 1);
+
+    var arr = str.split('&');
+
+    for (var i = 0; i < arr.length; i++) {
+        num = arr[i].indexOf('=');
+        if (num > 0) {
+            name = arr[i].substr(0, num);
+            value = arr[i].substr(num + 1);
+            resObj[name] = value;
+        }
+    }
+    return resObj;
+};;
+</script>
 </div>
 
 
